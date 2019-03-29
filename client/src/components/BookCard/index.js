@@ -5,7 +5,7 @@ function BookCard(props) {
   return (
       <div className="row">
     {props.books.map(book => (
-          <div className="card mb-3" key={
+          <div className="card mb-3 w-100" key={
             book._id
               ? book._id
               : book.googleBookId
@@ -27,7 +27,8 @@ function BookCard(props) {
                   <a className="btn btn-secondary" href={book.link} target="_blank" rel="noopener noreferrer" >View</a>
                   </div>
                   <div className="col-auto">
-                  <button className={props.buttonType}                     onClick={props.buttonAction}
+                  <button className={props.buttonType} 
+                  onClick={props.buttonAction}
                       id={
                         book._id
                           ? book._id

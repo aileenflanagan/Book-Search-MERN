@@ -19,6 +19,9 @@ class Saved extends Component {
         this.loadBooks();
     }
 
+        // For some reason the routes are not connecting 
+    //books will not load even with data artificially entered in database.
+    //gives xhr.js:173 GET http://localhost:3000/api/books 404 (Not Found)
     loadBooks = () => {
         API.getBooks()
             .then(res => {

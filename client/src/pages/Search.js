@@ -24,10 +24,7 @@ const formatBookResults = googleApiResults => {
         thumbnail: book.volumeInfo.imageLinks
           ? book.volumeInfo.imageLinks.thumbnail
           : 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/170px-No_image_available.svg.png',
-        link: book.volumeInfo.canonicalVolumeLink,
-        pageCount: book.volumeInfo.pageCount,
-        subtitle: book.volumeInfo.subtitle,
-        publishedDate: book.volumeInfo.publishedDate
+        link: book.volumeInfo.canonicalVolumeLink     
       };
   
       bookArray.push(formattedBook);
@@ -43,7 +40,9 @@ const formatBookResults = googleApiResults => {
       error: ''
     };
   
-    // Method for saving a particular book to the database.
+    // For some reason the routes are not connecting 
+    //error is xhr.js:173 POST http://localhost:3000/api/books 404 (Not Found)
+    
     saveBook = event => {
   
       const chosenBook = this.state.results.find(book => book.googleBookId === event.target.id);
@@ -82,7 +81,7 @@ const formatBookResults = googleApiResults => {
     // from Google Books API.
     handleFormSubmit = event => {
       event.preventDefault();
-      // console.log(`Search for: ${this.state.search}`);
+      console.log(`Search for: ${this.state.search}`);
       API.searchBooks(this.state.search)
         .then(res => {
           
