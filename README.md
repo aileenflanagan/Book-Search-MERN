@@ -3,8 +3,8 @@
 
 
 ## Bugs
-    * Save button is not working properly due to issue with routes.
-    * Books will not load also due to issues with routes.
+    * Program not saving books when run locally. 
+    * Delete button not working, but can't test because it will not work locally
 
 ## Future Improvements
     * Some styling quirks that should be fixed.
