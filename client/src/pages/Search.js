@@ -60,14 +60,16 @@ const formatBookResults = googleApiResults => {
       API.saveBook(newSave)
         .then(res => {
           console.log(res.status, res.statusText);
-          this.props.alert.show('Book Saved!', {type: 'success'})
+          // this.props.alert.show('Book Saved!', {type: 'success'})
+          alert("Book Saved!");
         })
         .catch(err => {
           console.log(err);
-          this.props.alert.show('Sorry, There was an issue with something back here...', {
-            type: 'error',
-            timeout: 5000
-          })
+          // this.props.alert.show('Sorry, There was an issue with something back here...', {
+          //   type: 'error',
+          //   timeout: 5000
+          // })
+          alert("Sorry, something went wrong");
         })
     };
   
@@ -81,8 +83,9 @@ const formatBookResults = googleApiResults => {
     handleFormSubmit = event => {
       event.preventDefault();
       // console.log(`Search for: ${this.state.search}`);
-      API.getBooks(this.state.search)
+      API.searchBooks(this.state.search)
         .then(res => {
+          
           const formattedArray = formatBookResults(res.data.items);
           this.setState({results: formattedArray});
         })

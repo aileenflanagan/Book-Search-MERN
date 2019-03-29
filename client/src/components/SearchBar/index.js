@@ -12,7 +12,7 @@ function SearchBar(props) {
   <form> 
   <div className="form-row align-items-center">
     <div className="col-auto">
-      <label className="sr-only" for="book-search">Search</label>
+      <label className="sr-only" htmlFor="book-search">Search</label>
       <input type="text" 
        value={props.search}
        onChange={props.handleInputChange}

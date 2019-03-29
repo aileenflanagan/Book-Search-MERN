@@ -3,7 +3,7 @@ import React from 'react';
 
 function BookCard(props) {
   return (
-      <div class="row">
+      <div className="row">
     {props.books.map(book => (
           <div className="card mb-3" key={
             book._id
@@ -24,7 +24,7 @@ function BookCard(props) {
                   <p className="card-text">{book.description}</p>
                   <div className="row">
                   <div className="col-auto">
-                  <a className="btn btn-secondary" href={book.link} target="_blank">View</a>
+                  <a className="btn btn-secondary" href={book.link} target="_blank" rel="noopener noreferrer" >View</a>
                   </div>
                   <div className="col-auto">
                   <button className={props.buttonType}                     onClick={props.buttonAction}
